@@ -6,10 +6,10 @@ ENV JAVA_HOME /usr/local/openjdk-8
 RUN \
     if [ ! -e /usr/bin/python ]; then ln -s /usr/bin/python2.7 /usr/bin/python; fi
 
-ADD hadoop-3.2.1.tar.gz /
+ADD hadoop-3.3.0-SNAPSHOT.tar.gz /
 
 RUN \
-    mv hadoop-3.2.1 $HADOOP_HOME && \
+    mv hadoop-3.3.0-SNAPSHOT $HADOOP_HOME && \
     for user in hadoop hdfs marblejenka; do \
          useradd -U -M -d /opt/hadoop/ --shell /bin/bash ${user}; \
     done && \
